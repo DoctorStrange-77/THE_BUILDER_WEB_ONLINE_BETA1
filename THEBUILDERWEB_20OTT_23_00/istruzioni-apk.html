@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Builder Web - Istruzioni APK Android</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .step {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .step h2 {
+            color: #667eea;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .step p {
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .step ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .step li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #764ba2;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+
+        .info {
+            background: #d1ecf1;
+            border-left-color: #17a2b8;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏗️ The Builder Web</h1>
+            <p>Guida alla Creazione dell'App Android</p>
+        </div>
+
+        <div class="content">
+            <div class="step success">
+                <div class="step-number">✓</div>
+                <h2>Configurazione Completata!</h2>
+                <p>Ho completato la configurazione dell'app Android per te:</p>
+                <ul class="checklist">
+                    <li>Installato Capacitor (framework per app native)</li>
+                    <li>Configurato il progetto per Android</li>
+                    <li>Compilato l'app React</li>
+                    <li>Creato il progetto Android completo</li>
+                    <li>Creato script automatico per generare l'APK</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <h2>Installa Java JDK</h2>
+                <p>Per compilare l'app Android, devi prima installare Java Development Kit (JDK):</p>
+
+                <a href="https://adoptium.net/temurin/releases/" target="_blank" class="btn">
+                    ⬇️ Scarica Java JDK
+                </a>
+
+                <p style="margin-top: 20px;"><strong>Configurazione consigliata:</strong></p>
+                <ul>
+                    <li><strong>Versione:</strong> JDK 17 (LTS) o JDK 21 (LTS)</li>
+                    <li><strong>Sistema Operativo:</strong> Windows</li>
+                    <li><strong>Architettura:</strong> x64</li>
+                    <li><strong>Tipo di pacchetto:</strong> .msi (installer)</li>
+                </ul>
+
+                <p style="margin-top: 20px;"><strong>Durante l'installazione, assicurati di selezionare:</strong></p>
+                <ul class="checklist">
+                    <li>Set JAVA_HOME variable</li>
+                    <li>Add to PATH</li>
+                    <li>JavaSoft (Oracle) registry keys</li>
+                </ul>
+
+                <div class="code">
+                    # Verifica l'installazione (apri CMD e digita):
+                    java -version
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h2>Genera l'APK</h2>
+                <p>Dopo aver installato Java, usa lo script automatico che ho creato:</p>
+
+                <ol>
+                    <li>Vai nella cartella del progetto:
+                        <div class="code">C:\Users\salva\Desktop\Nuova cartella\THEBUILDERWEB_fixed\THEBUILDERWEB_22_00rar\THEBUILDERWEB_1\</div>
+                    </li>
+                    <li>Fai <strong>doppio click</strong> sul file: <code style="background: #f8f9fa; padding: 4px 8px; border-radius: 4px;">build-apk.bat</code></li>
+                    <li>Aspetta che lo script completi tutti i passaggi (5-10 minuti la prima volta)</li>
+                </ol>
+
+                <p style="margin-top: 20px;">Lo script farà automaticamente:</p>
+                <ul class="checklist">
+                    <li>Verifica che Java sia installato</li>
+                    <li>Compila l'app React</li>
+                    <li>Sincronizza con Capacitor</li>
+                    <li>Genera l'APK Android</li>
+                    <li>Copia l'APK sul Desktop</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h2>Installa l'App su Android</h2>
+                <p>Dopo che lo script ha completato, troverai il file <strong>TheBuilderWeb.apk</strong> sul tuo Desktop.</p>
+
+                <ol>
+                    <li><strong>Trasferisci</strong> il file sul tuo telefono Android
+                        <br><small>(via USB, Bluetooth, email, Google Drive, WhatsApp, ecc.)</small>
+                    </li>
+                    <li><strong>Apri</strong> il file .apk sul telefono</li>
+                    <li>Se richiesto, <strong>autorizza</strong> l'installazione da "Origini sconosciute"
+                        <br><small>Impostazioni → Sicurezza → Origini sconosciute</small>
+                    </li>
+                    <li><strong>Installa</strong> l'app</li>
+                    <li><strong>Apri</strong> l'app dalla home screen</li>
+                </ol>
+            </div>
+
+            <div class="step info">
+                <h2>📱 Caratteristiche dell'App</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">✅</div>
+                        <div class="feature-title">App Nativa</div>
+                        <p>Si comporta come un'app nativa Android</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📴</div>
+                        <div class="feature-title">Funziona Offline</div>
+                        <p>Nessuna connessione richiesta</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <div class="feature-title">Dati Locali</div>
+                        <p>Salvati sul dispositivo</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <div class="feature-title">Completa</div>
+                        <p>Tutte le funzionalità web</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step warning">
+                <h2>⚠️ Limitazioni (versione demo)</h2>
+                <ul>
+                    <li><strong>Nessuna sincronizzazione:</strong> I dati non si sincronizzano tra telefono e computer</li>
+                    <li><strong>Nessun backup cloud:</strong> Se disinstalli l'app, perdi i dati</li>
+                    <li><strong>Nessun import da Google Sheets:</strong> Non puoi importare da Google Sheets direttamente dall'app</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h2>🚀 Prossimi Passi (Opzionali)</h2>
+                <p>Se vuoi migliorare l'app, posso aiutarti a:</p>
+                <ul>
+                    <li><strong>Aggiungere Backend con Supabase</strong> - Sincronizzazione tra dispositivi, backup cloud, multi-utente</li>
+                    <li><strong>Personalizzare l'App</strong> - Cambiare icona, nome, colori e temi</li>
+                    <li><strong>Pubblicare su Google Play Store</strong> - Rendere l'app disponibile pubblicamente</li>
+                    <li><strong>Aggiungere Funzionalità Native</strong> - Notifiche push, fotocamera, geolocalizzazione</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>File Importanti</strong></p>
+            <p style="margin-top: 10px;">
+                📄 <code>build-apk.bat</code> - Script per generare l'APK<br>
+                📄 <code>GUIDA_APK_ANDROID.md</code> - Guida completa dettagliata<br>
+                📄 <code>README_APK.txt</code> - Riepilogo rapido
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+                Creato con ❤️ usando Capacitor + React + TypeScript
+            </p>
+        </div>
+    </div>
+</body>
+</html>

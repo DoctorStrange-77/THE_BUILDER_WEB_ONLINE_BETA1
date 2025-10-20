@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat \"c:\\Users\\salva\\Desktop\\Nuova cartella\\THEBUILDERWEB_1\\src\\components\\PrintableScheda.tsx\")",
+      "Read(//c/Users/salva/Desktop/Nuova cartella/THEBUILDERWEB_1/src/components/**)",
+      "Read(//c/Users/salva/Desktop/Nuova cartella/THEBUILDERWEB_1/src/modules/template-split/components/**)",
+      "Read(//c/Users/salva/Desktop/Nuova cartella/THEBUILDERWEB_1/src/types/**)",
+      "Read(//c/Users/salva/Desktop/Nuova cartella/THEBUILDERWEB_1/src/pages/**)",
+      "Read(//c/Users/salva/Desktop/Nuova cartella/THEBUILDERWEB_1/**)",
+      "Bash(npx tsc --noEmit --skipLibCheck \"src/pages/AtletaDettaglio.tsx\")",
+      "Bash(npx tsc --noEmit --skipLibCheck src/pages/AtletaDettaglio.tsx)",
+      "Bash(npm install:*)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(npm run build:*)",
+      "Bash(npx tsc:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

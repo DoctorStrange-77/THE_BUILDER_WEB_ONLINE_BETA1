@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 38 100% 50%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 33 100% 50%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 38 100% 50%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 17%;
+    --input: 0 0% 17%;
+    --ring: 38 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 38 100% 50%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 38 100% 50%;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(38 100% 50%), hsl(33 100% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 7%), hsl(0 0% 9%));
+    --shadow-glow: 0 0 40px hsl(38 100% 50% / 0.15);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+    /* Muscle group colors (categorised)
+     - legs: warm brown/orange
+     - chest/push: blues
+     - back/pull: teal/blue
+     - shoulders: purple/indigo
+     - arms: warm red/orange
+     - core: greens
+     - prehab/mobility: muted grays/olive
+   */
+
+   /* Legs (brown / orange tones) */
+   --abduttori-tfl: 28 45% 28%;
+   --adduttori: 28 40% 30%;
+   --femorali: 28 45% 30%;
+   --femorali-glutei: 28 45% 30%;
+   --glutei: 25 48% 32%;
+   --grande-gluteo: 25 48% 34%;
+   --medio-gluteo: 27 45% 30%;
+   --piccolo-gluteo: 26 40% 28%;
+   --quadricipiti: 30 45% 32%;
+   --quadricipiti-glutei: 30 45% 33%;
+   --polpacci: 30 35% 28%;
+   --gastrocnemio: 30 35% 28%;
+   --soleo: 30 30% 26%;
+   --tibiale-anteriore: 30 30% 30%;
+   --tibiale-posteriore: 29 32% 28%;
+   --peronei: 28 30% 26%;
+   --accosciata: 30 45% 30%;
+   --lunges-unilaterali: 30 45% 30%;
+   --spinta-anca: 28 45% 32%;
+   --hip-hinge: 28 45% 30%;
+
+   /* Chest / push (blue tones) */
+   --pettorali: 215 60% 45%;
+   --pettorale-sternale: 215 60% 45%;
+   --pettorale-clavic: 210 58% 48%;
+   --pettorale-addominale: 210 55% 42%;
+   --spinta-orizzontale: 214 55% 44%;
+   --spinta-verticale: 212 54% 43%;
+
+   /* Back / pull (teal / blue) */
+   --dorso: 195 60% 36%;
+   --dorso-ampiezza: 195 60% 38%;
+   --dorso-spessore: 190 55% 34%;
+   --gran-dorsale: 195 60% 36%;
+   --gran-rotondo: 195 50% 34%;
+   --trazione-orizzontale: 200 50% 36%;
+   --trazione-verticale: 200 50% 36%;
+   --tirate-oly: 195 50% 36%;
+   --centro-schiena: 195 45% 34%;
+   --erettori-spinali: 190 40% 30%;
+
+   /* Shoulders / deltoids (purple / indigo) */
+   --deltoide-anteriore: 265 50% 45%;
+   --deltoide-mediale: 260 50% 44%;
+   --deltoide-posteriore: 255 48% 43%;
+   --deltoidi: 260 50% 44%;
+   --spalle: 260 50% 44%;
+
+   /* Arms (warm reds/oranges) */
+   --bicipiti: 12 65% 48%;
+   --bicipite-accorciamento: 12 65% 46%;
+   --bicipite-allungamento: 12 60% 44%;
+   --tricipiti: 8 60% 44%;
+   --tricipite-accorciamento: 8 60% 42%;
+   --tricipite-allungamento: 8 55% 40%;
+   --brachiale: 14 55% 42%;
+   --brachioradiale: 20 50% 40%;
+   --avambracci-flessori-estensori: 24 40% 35%;
+   --flessori-dita-presa: 24 40% 34%;
+
+   /* Core (greens) */
+   --core-addome: 145 35% 30%;
+   --obliqui: 140 35% 33%;
+   --trasverso-addome: 140 30% 28%;
+   --quadrato-lombi: 140 30% 30%;
+
+   /* Scapular / traps / upper back (indigo/teal) */
+   --trapezio: 210 30% 36%;
+   --trapezio-romboidi: 210 30% 36%;
+   --trapezio-inferiore: 210 28% 34%;
+   --trapezio-medio: 210 30% 35%;
+   --trapezio-superiore: 210 32% 37%;
+   --retrattori-scapolari: 200 30% 34%;
+   --romboidi: 200 30% 34%;
+   --protrattori-scapolari: 200 28% 34%;
+   --depressori-scapolari: 200 28% 33%;
+   --elevatore-scapola: 200 28% 35%;
+   --serrato-anteriore: 200 28% 36%;
+
+   /* Rotators, cuffia, smaller shoulder structures (muted teal/gray) */
+   --cuffia-rotatori: 185 18% 34%;
+   --rotazione-scapolare-alto: 185 18% 34%;
+
+   /* Mobility / Prehab (muted grays / olive) */
+   --mobilita-anca: 35 8% 28%;
+   --mobilita-caviglia: 35 8% 28%;
+   --mobilita-colonna-lombare: 210 8% 18%;
+   --mobilita-polso-avambraccio: 35 8% 28%;
+   --mobilita-spalla: 210 8% 22%;
+   --mobilita-toracica: 210 8% 22%;
+   --prehab-anca-glutei: 30 10% 28%;
+   --prehab-caviglia: 30 10% 28%;
+   --prehab-colonna: 210 10% 20%;
+   --prehab-ginocchio: 30 10% 28%;
+   --prehab-gomito-polso: 30 10% 28%;
+   --prehab-spalla: 210 10% 22%;
+
+   /* Misc / specialty movement descriptors */
+   --centro-schiena: 195 45% 34%;
+   --multifidi: 145 25% 26%;
+   --carries-portate: 28 35% 30%;
+   --dorsiflessione: 30 35% 28%;
+   --locomozione-sled: 30 35% 30%;
+   --spinta-orizzontale: 215 55% 44%;
+   --spinta-verticale: 212 54% 43%;
+   --tirate-oly: 195 50% 36%;
+   --varianti-powerlifting: 210 30% 34%;
+
+    /* Auto-generated muscle variables (fallbacks) */
+    --attivazione: 0 0% 15%;
+    --ileo-psoas: 0 0% 15%;
+    --rotatori-anca: 260 50% 44%;
+    --anti-estensione: 0 0% 15%;
+    --anti-inclinazione-laterale: 0 0% 15%;
+    --anti-rotazione: 0 0% 15%;
+    --depressione-scapolare: 215 60% 45%;
+    --estensione-ginocchio: 0 0% 15%;
+    --flessione-ginocchio: 0 0% 15%;
+    --flessione-plantare: 0 0% 15%;
+    --protrazione-scapolare: 195 55% 36%;
+    --retrazione-scapolare: 195 55% 36%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 38 100% 50%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 33 100% 50%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 38 100% 50%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 17%;
+    --input: 0 0% 17%;
+    --ring: 38 100% 50%;
+    
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 38 100% 50%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 38 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Center calendar icon in date inputs */
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.8;
+    margin-left: -8px;
+    margin-right: auto;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+  }
+}
