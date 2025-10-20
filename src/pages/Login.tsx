@@ -1,25 +1,30 @@
-// src/pages/Login.tsx
 import { useEffect } from "react";
 
 export default function Login() {
   useEffect(() => {
-    window.netlifyIdentity?.init();
-    const onLogin = () => (window.location.href = "/");
-    window.netlifyIdentity?.on("login", onLogin);
-    return () => window.netlifyIdentity?.off("login", onLogin);
+    const id = window.netlifyIdentity;
+    if (!id) return;
+    id.init();
+
+    const goHome = () => window.location.replace("/");
+    id.on("login", goHome);
+    id.on("signup", goHome);
+    id.on("init", (user: any) => { if (user) goHome(); });
+
+    return () => {
+      id.off("login", goHome);
+      id.off("signup", goHome);
+      // @ts-ignore
+      id.off("init", goHome);
+    };
   }, []);
 
   return (
-    <main style={{ minHeight: "100vh", display: "grid", placeItems: "center" }}>
-      <div style={{ textAlign: "center" }}>
+    <main style={{ minHeight:"100vh", display:"grid", placeItems:"center" }}>
+      <div style={{ textAlign:"center" }}>
         <h1>Accedi</h1>
         <p>Entra con l’account invitato</p>
-        <button
-          onClick={() => window.netlifyIdentity?.open("login")}
-          style={{ padding: "10px 16px", fontWeight: 600, cursor: "pointer" }}
-        >
-          Login
-        </button>
+        <button onClick={() => window.netlifyIdentity?.open("login")}>Login</button>
       </div>
     </main>
   );
